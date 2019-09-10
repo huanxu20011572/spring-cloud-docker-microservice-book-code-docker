@@ -1,0 +1,46 @@
+server:
+  port: 9411
+spring:
+  application:
+    name: zipkin-server
+  datasource:                           # 指定数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.44.26.19:3306/springclouddb
+    username: root
+    password: Qmgps2008@123
+    druid:
+      initial-size: 1
+      max-active: 20
+      min-idle: 3
+      max-wait: 60000
+      pool-prepared-statements: false
+      validation-query: SELECT 'x'
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      max-pool-prepared-statement-per-connection-size: 20
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.44.26.22:8761/eureka/
+zipkin:
+  storage:
+    type: mysql
+mybatis:
+  typeAliasesPackage: com.itmuch.cloud.study.user.dao
+  mapperLocations: classpath:mybatis/mapper/*.xml
+  configuration:
+        log-impl: org.apache.ibatis.logging.log4j.Log4jImpl
+      cache-enabled: true         
+      lazy-loading-enabled: true                         
+      aggressive-lazy-loading: true                       
+      multiple-result-sets-enabled: true                 
+      use-column-label: true                             
+      use-generated-keys: true                           
+      auto-mapping-behavior: partial                     
+      default-executor-type: simple                       
+      map-underscore-to-camel-case: true                 
+      local-cache-scope: session                         
+      jdbc-type-for-null: null                           

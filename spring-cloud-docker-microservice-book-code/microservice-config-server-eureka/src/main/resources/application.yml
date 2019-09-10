@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server-eureka
+  cloud:
+    config:
+      server:
+        git:
+           uri: https://github.com/huanxu20011572/spring-cloud-config-repo
+           username: 40396013@qq.com
+           password: qmgps2008                                                         #
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.44.26.22:8761/eureka/

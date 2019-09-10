@@ -1,0 +1,18 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                           # 指定数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.44.26.19:3306/springclouddb
+    username: root
+    password: Qmgps2008@123
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.sleuth: DEBUG
+    # org.springframework.web.servlet.DispatcherServlet: DEBUG

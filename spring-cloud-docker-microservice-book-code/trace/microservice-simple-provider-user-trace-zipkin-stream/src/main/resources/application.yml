@@ -1,0 +1,26 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                           # 指定数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.44.26.19:3306/springclouddb
+    username: root
+    password: Qmgps2008@123
+  application:
+    name: microservice-provider-user
+  sleuth:
+    sampler:
+      percentage: 1.0
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  zipkin:
+    rabbitmq:
+      queue: zipkin

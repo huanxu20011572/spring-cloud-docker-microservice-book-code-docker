@@ -1,0 +1,17 @@
+server:
+  port: 9411
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 10.133.68.80:5672
+      password: guest
+      username: guest
+      queue: zipkin
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      hosts: http://10.44.26.19:9200
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1

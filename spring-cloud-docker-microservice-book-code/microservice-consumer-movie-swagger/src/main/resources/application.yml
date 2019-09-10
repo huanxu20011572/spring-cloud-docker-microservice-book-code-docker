@@ -1,0 +1,34 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.44.26.22:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+swagger:
+  base-package: com.itmuch.cloud.study.user.controller
+  base-path: /user/**
+  title: swagger-demo项目
+  enabled: true
+  description:  一个Swagger测试项目
+  version: 1.0.0.RELEASE
+  contact:
+    name: jerry.xh
+    email: xuhuan@chinatsp.com
+    url:
+  docket:
+    docket-name1:
+      title: 测试1
+      description: 描述
+      version: 1.0.0
+      contact:
+         name: 开发人员A
+      base-path: /user/** #swagger扫描的基础包 分组的配置会覆盖全局的配置
+      base-package:  com.itmuch.cloud.study.user.controller #需要处理的基础URL规则
+      exclude-path:
+

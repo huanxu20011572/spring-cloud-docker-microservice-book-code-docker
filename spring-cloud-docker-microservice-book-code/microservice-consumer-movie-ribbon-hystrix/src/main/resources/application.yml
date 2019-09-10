@@ -1,0 +1,17 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.44.26.22:8761/eureka/
+  instance:
+    prefer-ip-address: true
+hystrix:
+  threadpool:
+    coreSize: 2
+  metrics:
+    enabled: true
+    polling-interval-ms: 200
